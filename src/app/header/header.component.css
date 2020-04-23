@@ -1,0 +1,23 @@
+.navbar-inverse {
+    background-color: rgb(255, 255, 255);
+    border-color: #080808;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+
+
+
+#bg {
+    position: relative; 
+    top: 0; 
+    left: 0; 
+      
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+}  
