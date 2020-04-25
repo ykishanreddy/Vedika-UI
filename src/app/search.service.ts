@@ -11,8 +11,8 @@ const httpOptions = {
 export class SearchService {
 
   constructor(private http: HttpClient) { }
-  search() {
-    return this.http.get('../../assets/data.json', httpOptions);
+  getAllFunctionHalls() {
+    return this.http.get('http://localhost:8057/api/functionhalls', httpOptions);
     // return this.http.get('https://jsonplaceholder.typicode.com/posts', httpOptions);
   }
 }

@@ -4,14 +4,14 @@
       <h1 class="display-5 font-weight-bold">Discover The Perfect Place For<br><b> A Great Occasion</b></h1>
       <form class="navbar-form navbar-left">
         <div class="input-group">
-            <input class="form-control" type="text" (click)="onSearch()" [(ngModel)]="query" name="query"
+            <input class="form-control" type="text" [(ngModel)]="query" name="query"
               placeholder="&#61442;  Start searching for a functionhall by id or name or City">
               <button (click)="onSearch()" type="button" class="btn btn-success">Search</button>
               <form class="container">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                       <ul *ngFor="let item of filteredData">
-                        <li (click)="onSelect(item)"> {{ item.name }}</li>
+                        <li (click)="onSelect(item)"> {{ item.functionHallName }}</li>
                       </ul>
                     </div>
                 </div>

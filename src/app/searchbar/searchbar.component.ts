@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { SearchService } from '../search.service';
+import { halls } from '../functionhall/models/halls';
 
 @Component({
   selector: 'app-searchbar',
@@ -11,25 +12,23 @@ import { SearchService } from '../search.service';
 export class SearchbarComponent implements OnInit {
 
   // public selectedId: any;
-  public query: any;
-  public data: any = [];
+  public query: string;
+  public test:string  ;
+  public functionHalls: any = [];
   public filteredData: any = [];
-
+   //Functionhalls : halls[]
   constructor(
     private searchSvc: SearchService,
     private router: Router
     ) { }
-
+  
   ngOnInit(): void {
-    this.searchSvc
-    .search()
-    .subscribe(
-      (data => {
-        console.log(data);
-        this.data = data;
-      }),
-      (error) => { console.log(error);}
-    );
+    debugger
+    this.searchSvc.getAllFunctionHalls()
+    .subscribe( Response => {
+      console.log("Functionhalls")
+      this.functionHalls = Response["functionHalls"]  
+  },(error) => { console.log(error);})
   }
 
   onSelect(item: any){
@@ -37,12 +36,13 @@ export class SearchbarComponent implements OnInit {
   }
 
   onSearch(){
+    debugger
     if(this.query.length < 3) {
       this.filteredData = [];
       return;
     }
 
-    this.data.forEach(element => {
+    this.functionHalls.forEach(element => {
       let keys = Object.keys(element);
       keys.forEach(k => {
         let item;
