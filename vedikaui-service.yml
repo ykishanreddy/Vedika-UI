@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: vedikaui-service
+spec:
+  ports:
+  - port: 82
+    targetPort: vedikaui-port
+    protocol: TCP
+  selector:
+    app: vedika
+  type: NodePort
