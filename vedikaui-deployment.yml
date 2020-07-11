@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vedikaui-deployment
+  labels:
+    app: vedika
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: vedika
+  template:
+    metadata:
+      labels:
+        app: vedika
+    spec:
+      containers:
+      - name: vedikauicon
+        image: ykreddys/vedikaui:3ImageTag
+        ports:
+        - name: vedikaui-port
+          containerPort: 4200
