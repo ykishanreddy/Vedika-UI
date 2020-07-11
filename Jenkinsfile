@@ -5,8 +5,8 @@ pipeline {
     }
     agent any
 	
- /**   stages {
-        stage('SCM') {
+    stages {
+   /**     stage('SCM') {
             steps {
                 git 'https://github.com/keerthana818/Vedika-UI.git'
 				}
